@@ -1,6 +1,8 @@
 ## Environmental Sociology Final-Paper
 
-# This page is source code of Final Paper subject, "Evaluating Citizen Exposure as a Determinant of Reverse Vending Machine Success: A Comparative Analysis of Delhi and Bangkok"
+# "Evaluating Citizen Exposure as a Determinant of Reverse Vending Machine Success: A Comparative Analysis of Delhi and Bangkok"
+
+This page is source code of Final Paper subject, "Evaluating Citizen Exposure as a Determinant of Reverse Vending Machine Success: A Comparative Analysis of Delhi and Bangkok"
 
 
 1. Correlation Analysis Result
