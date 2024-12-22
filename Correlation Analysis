@@ -3,35 +3,34 @@ import statsmodels.api as sm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# 데이터 생성
+
 data = {
     'city': ['Bangkok', 'Delhi'],
-    'population': [10722800, 18600000],  # 인구 수
-    'population_density': [5258.6, 5900],  # 인구 밀도 (명/km^2)
-    'incentives': [29, 12],  # 인센티브 점수 (가상의 스케일)
-    'rvm_units': [10, 4],  # RVM 대수
-    'ngo_num': [1, 5],  # NGO 수
-    'gathered_bottle_amount': [274600, 450000]  # 수집된 병의 양
+    'population': [10722800, 18600000],  
+    'population_density': [5258.6, 5900],
+    'incentives': [29, 12],  
+    'rvm_units': [10, 4],  
+    'ngo_num': [1, 5],  
+    'gathered_bottle_amount': [274600, 450000] 
 }
 
-# 데이터프레임 생성
+
 df = pd.DataFrame(data)
 
-# 독립 변수(X)와 종속 변수(y) 정의
+
 X = df[['population', 'population_density', 'incentives', 'rvm_units', 'ngo_num', 'age']]
 y = df['gathered_bottle_amount']
 
-# 상수항 추가
 X = sm.add_constant(X)
 
-# 회귀분석 모델 생성
+
 model = sm.OLS(y, X).fit()
 
-# 결과 요약 출력
+
 print(model.summary())
 
-# 변수 중요도 시각화
-coef = model.params[1:]  # 상수항(constant) 제외
+
+coef = model.params[1:] 
 plt.figure(figsize=(8, 5))
 sns.barplot(x=coef.index, y=coef.values)
 plt.title("Feature Importance for Gathered Bottle Amount")
